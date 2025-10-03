@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Mobility Program - OIRA Alliance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        
+        .pdf-container {
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: #525659;
+        }
+        
+        .pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+        
+        .pdf-fallback {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 26, 51, 0.9) 0%, rgba(0, 102, 204, 0.9) 100%);
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+        }
+        
+        .fallback-content {
+            max-width: 600px;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .fallback-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+        }
+        
+        .fallback-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .fallback-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .download-btn, .view-btn {
+            padding: 1.25rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            min-width: 180px;
+            justify-content: center;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #00ccff, #0099cc);
+            color: white;
+            box-shadow: 0 15px 35px rgba(0, 204, 255, 0.3);
+        }
+        
+        .view-btn {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            color: white;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 204, 255, 0.4);
+        }
+        
+        .view-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+        }
+        
+        .back-link {
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: white;
+            transform: translateX(-5px);
+        }
+        
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 1.2rem;
+            z-index: 10;
+            text-align: center;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="pdf-container">
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            Loading Blue Mobility Program...
+        </div>
+        
+        <!-- Using PDF.js for universal compatibility -->
+        <iframe src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://your-domain.com/assets/documents/OIRA-Invitation Advisory Council.pdf" 
+                class="pdf-viewer" 
+                id="pdf-viewer"
+                onload="hideLoading()"
+                onerror="showFallback()">
+        </iframe>
+        
+        <!-- Direct iframe as primary method -->
+        <iframe src="./assets/documents/OIRA-Invitation Advisory Council.pdf#toolbar=0&navpanes=0&scrollbar=0" 
+                class="pdf-viewer" 
+                id="pdf-direct"
+                onload="hideLoading()"
+                onerror="showFallback()"
+                style="display: block;">
+        </iframe>
+        
+        <!-- Fallback for all browsers -->
+        <div class="pdf-fallback" id="pdf-fallback">
+            <div class="fallback-content">
+                <div class="fallback-icon">📄</div>
+                <h3>Blue Mobility Program</h3>
+                <p>Complete Implementation Guide - View or download our comprehensive program document with detailed implementation strategies and technical specifications.</p>
+                <div class="button-group">
+                    <a href="./assets/documents/OIRA-Invitation Advisory Council.pdf" class="download-btn" download>
+                        <span>📥</span>
+                        Download PDF
+                    </a>
+                    <a href="./assets/documents/OIRA-Invitation Advisory Council.pdf" class="view-btn" target="_blank">
+                        <span>🔗</span>
+                        Open in Browser
+                    </a>
+                </div>
+                <a href="index.html" class="back-link">← Back to OIRA Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let loadingTimeout;
+        
+        function hideLoading() {
+            const loading = document.getElementById('loading');
+            if (loading) {
+                loading.style.display = 'none';
+            }
+            clearTimeout(loadingTimeout);
+        }
+        
+        function showFallback() {
+            const fallback = document.getElementById('pdf-fallback');
+            const loading = document.getElementById('loading');
+            const viewer = document.getElementById('pdf-direct');
+            
+            if (loading) loading.style.display = 'none';
+            if (viewer) viewer.style.display = 'none';
+            if (fallback) fallback.style.display = 'flex';
+        }
+        
+        // Auto-show fallback after 5 seconds if PDF doesn't load
+        loadingTimeout = setTimeout(() => {
+            showFallback();
+        }, 5000);
+        
+        // Try to detect if PDF loaded successfully
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const iframe = document.getElementById('pdf-direct');
+                const loading = document.getElementById('loading');
+                
+                try {
+                    // Test iframe accessibility
+                    if (iframe && iframe.contentWindow) {
+                        hideLoading();
+                    } else {
+                        showFallback();
+                    }
+                } catch (e) {
+                    // Cross-origin or PDF loaded successfully
+                    hideLoading();
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

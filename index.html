@@ -7,19 +7,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="top">
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">OIRA</div>
+            <div class="logo">
+                <a href="#top">
+                    <img src="./assets/icons/OIRA_logo_blue.png" alt="OIRA" class="logo-img">
+                </a>
+            </div>
             <ul class="nav-links">
-                <li><a href="#mission">Mission</a></li>
                 <li><a href="#challenge">Challenge</a></li>
                 <li><a href="#program">Program</a></li>
                 <li><a href="#impact">Impact</a></li>
                 <li><a href="#join">Join Us</a></li>
+                <li><a href="#contact" class="contact-link">Contact</a></li>
             </ul>
-            <a href="#join" class="cta-button">Join Alliance</a>
+            <a href="#join" class="cta-button">Join the Alliance</a>
         </nav>
     </header>
 
@@ -40,7 +44,7 @@
             <h1>OCEAN ISLANDS<br>REGENERATION ALLIANCE</h1>
             <p class="tagline">A GLOBAL ALLIANCE TO REGENERATE OCEANS FROM THE ISLANDS UP</p>
             <p class="mission">OIRA is a non-profit alliance working with island and coastal communities to <strong>regenerate ocean ecosystems</strong> and <strong>strengthen resilience</strong> through <strong>clean maritime mobility</strong>, <strong>circular economies</strong>, and <strong>inclusive governance</strong>.</p>
-            <a href="#challenge" class="cta-button">Discover Our Mission</a>
+            <a href="#program" class="cta-button">Discover Our Mission</a>
         </div>
     </section>
 
@@ -48,31 +52,34 @@
     <section class="challenge" id="challenge">
         <div class="container">
             <h2 class="section-title">The Challenge</h2>
-            <p class="paradox-quote">"Islands face a mobility paradox: the same systems that sustain life today are driving collapse tomorrow. OIRA is building the solution."</p>
+            <p class="paradox-quote">"Bringing transition models to islands so they can shift towards more sustainable models. OIRA is building the solution."</p>
             
             <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number">5,000+</div>
-                    <div class="stat-label">Inter-island routes worldwide</div>
-                </div>
                 <div class="stat-card">
                     <div class="stat-number">700M</div>
                     <div class="stat-label">People living on islands</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">Most</div>
-                    <div class="stat-label">Routes through protected areas</div>
+                    <div class="stat-number">9%</div>
+                    <div class="stat-label">Ocean classified as MPA, only 3% effectively protected</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Critical</div>
+                    <div class="stat-label">Maritime activities: key to island survival, threat to ecosystems when mismanaged</div>
                 </div>
             </div>
 
-            <p class="section-subtitle">Many inter-island routes cut through marine protected areas without specific regulation or ecological safeguards. The vast majority remain polluting, noisy, and ecologically harmful. This gap can no longer be ignored.</p>
+            <p class="section-subtitle">Maritime activities are the key to island subsistence and development, but when poorly managed, they directly threaten the ecosystems on which community survival depends. Only 3% of marine protected areas benefit from effective protection with real management plans.</p>
         </div>
     </section>
 
     <!-- Blue Mobility Program -->
     <section class="bmp" id="program">
         <div class="container">
-            <h2 class="section-title">The Blue Mobility Program</h2>
+            <div class="bmp-header">
+                <h2 class="section-title">The Blue Mobility Program</h2>
+                <div class="bmp-logo">🌊</div>
+            </div>
             <p class="section-subtitle">Our flagship initiative to transform maritime mobility in island territories into a driver of regeneration, resilience, and community well-being.</p>
             
             <div class="objectives-grid">
@@ -130,24 +137,40 @@
             
             <div class="impact-grid">
                 <div class="impact-card">
-                    <div class="impact-icon">🌱</div>
-                    <h3>-80%</h3>
-                    <p>CO₂ emissions vs conventional models</p>
+                    <div class="impact-icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9L17 14L18.18 21L12 17.77L5.82 21L7 14L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>CO₂ Emissions</h3>
+                    <p>Significant reduction vs conventional models</p>
                 </div>
                 <div class="impact-card">
-                    <div class="impact-icon">🔇</div>
-                    <h3>-92%</h3>
-                    <p>Reduction in underwater noise pollution</p>
+                    <div class="impact-icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Water & Soil</h3>
+                    <p>Reduction in water and soil pollution</p>
                 </div>
                 <div class="impact-card">
-                    <div class="impact-icon">💼</div>
-                    <h3>15+</h3>
-                    <p>Blue jobs created per territory</p>
+                    <div class="impact-icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Blue Jobs</h3>
+                    <p>Creation of sustainable blue economy employment</p>
                 </div>
                 <div class="impact-card">
-                    <div class="impact-icon">🛡️</div>
-                    <h3>MPAs</h3>
-                    <p>Supporting Marine Protected Areas</p>
+                    <div class="impact-icon">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2l3.09 6.26L22 9l-5 4.87 1.18 6.88L12 17.77l-6.18 2.98L7 14.87 2 9l6.91-1.74L12 2z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Marine Protection</h3>
+                    <p>Supporting Marine Protected Areas effectiveness</p>
                 </div>
             </div>
 
@@ -161,15 +184,9 @@
             <h2 class="section-title">Regions of Action</h2>
             <p class="section-subtitle">OIRA focuses on the world's most fragile and valuable island territories to create scalable solutions that protect ecosystems and empower communities.</p>
             
-            <div class="regions-list">
-                <span class="region-tag">Galápagos</span>
-                <span class="region-tag">Polynesian Islands</span>
-                <span class="region-tag">Canary Islands</span>
-                <span class="region-tag">Philippines</span>
-                <span class="region-tag">Indonesia</span>
-                <span class="region-tag">Caribbean</span>
-                <span class="region-tag">Oceania</span>
-                <span class="region-tag">Indian Ocean</span>
+            <div class="regions-map">
+                <img src="./assets/images/OIRA_map.png" alt="OIRA Regions of Action Map" class="map-image">
+                <p class="map-caption">Our global network spans critical island territories worldwide</p>
             </div>
         </div>
     </section>
@@ -178,31 +195,127 @@
     <section class="join-alliance" id="join">
         <div class="container">
             <h2 class="section-title">Join the Alliance</h2>
-            <p class="section-subtitle">Your support is the key to launching and multiplying Blue Mobility Programs and empowering island communities worldwide.</p>
+            <p class="section-subtitle">Your support is the key to launching and multiplying Blue Mobility Programs and empowering island communities worldwide. <strong>Quick form - less than 2 minutes to complete.</strong></p>
             
             <div class="action-cards">
                 <div class="action-card">
                     <h3>🤝 Become a Member</h3>
                     <p>Join our global alliance and become part of the ocean regeneration movement. Help us launch regenerative corridors and strengthen community economies.</p>
-                    <a href="mailto:founder@oira-alliance.com" class="cta-button">Join Alliance</a>
+                    <a href="https://form.typeform.com/to/XBCOoOUK" class="cta-button" target="_blank">Join the Alliance</a>
                 </div>
                 
                 <div class="action-card">
                     <h3>🎯 Advisory Council</h3>
                     <p>Guide OIRA's strategy by sharing expertise and connecting us to key networks. Non-binding role with high impact potential.</p>
-                    <a href="mailto:founder@oira-alliance.com" class="cta-button">Become Advisor</a>
+                    <a href="blue-mobility-program.html" class="cta-button">Apply</a>
                 </div>
                 
                 <div class="action-card">
                     <h3>🌟 Volunteer</h3>
                     <p>Everyone can play a role in regenerating the ocean. Support projects, education, and outreach with your time and skills.</p>
-                    <a href="mailto:founder@oira-alliance.com" class="cta-button">Volunteer</a>
+                    <a href="#contact" class="cta-button">Volunteer</a>
+                </div>
+            </div>
+            
+            <div class="main-form-cta">
+                <a href="https://form.typeform.com/to/XBCOoOUK" class="main-form-button" target="_blank">
+                    <span>📝</span>
+                    Complete Application Form
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fund Projects -->
+    <section class="fund-projects">
+        <div class="container">
+            <h2 class="section-title">Fund Our Impact</h2>
+            <p class="section-subtitle">Support our mission with funding. Access detailed information about our proposals and see the tangible impact of your investment.</p>
+            
+            <div class="funding-content">
+                <div class="funding-info">
+                    <h3>Why Fund OIRA?</h3>
+                    <ul>
+                        <li>Direct impact on marine ecosystem restoration</li>
+                        <li>Empowerment of island communities</li>
+                        <li>Scalable solutions for global replication</li>
+                        <li>Transparent reporting and measurable outcomes</li>
+                    </ul>
+                </div>
+                <div class="funding-cta">
+                    <a href="#contact" class="fund-button">
+                        Fund Projects
+                    </a>
+                    <p class="funding-note">Contact us for detailed project proposals and impact assessments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">Ready to join our mission? Have questions about our programs? We'd love to hear from you.</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email</strong>
+                            <p>founder@oira-alliance.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🏢</div>
+                        <div>
+                            <strong>Headquarters</strong>
+                            <p>Santa Cruz de Tenerife<br>Canary Islands, Spain</p>
+                        </div>
+                    </div>
                 </div>
                 
-                <div class="action-card">
-                    <h3>💰 Fund Projects</h3>
-                    <p>Support our mission with funding. Access detailed information about our proposals and see the tangible impact of your investment.</p>
-                    <a href="mailto:founder@oira-alliance.com" class="cta-button">Fund Us</a>
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" action="mailto:founder@oira-alliance.com" method="post" enctype="text/plain">
+                        <h3>Send us a Message</h3>
+                        
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="organization">Organization</label>
+                            <input type="text" id="organization" name="organization">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest">I'm interested in *</label>
+                            <select id="interest" name="interest" required>
+                                <option value="">Select an option</option>
+                                <option value="joining-alliance">Joining the Alliance</option>
+                                <option value="advisory-council">Advisory Council</option>
+                                <option value="volunteering">Volunteering</option>
+                                <option value="funding">Funding Projects</option>
+                                <option value="partnership">Partnership</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your interest in OIRA and how you'd like to get involved..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>

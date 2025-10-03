@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIRA Advisory Council Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* PDF-based Advisory Council Page Styles */
+        .confidential-banner {
+            background: linear-gradient(135deg, #d32f2f, #f44336);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 10px rgba(211, 47, 47, 0.3);
+        }
+
+        .advisory-header {
+            background: linear-gradient(135deg, rgba(0, 26, 51, 0.95) 0%, rgba(0, 102, 204, 0.95) 100%),
+                        url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 0 4rem;
+            color: white;
+            text-align: center;
+        }
+        
+        .advisory-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .advisory-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .content-section {
+            padding: 3rem 0;
+        }
+        
+        .content-section:nth-child(even) {
+            background: rgba(248, 250, 252, 0.7);
+        }
+        
+        .invitation-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+            border-left: 4px solid #0066cc;
+        }
+        
+        .invitation-card h2 {
+            color: #0066cc;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        
+        .invitation-card h3 {
+            color: #001a33;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .invitation-card p {
+            line-height: 1.7;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .invitation-card ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .invitation-card li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .application-cta {
+            background: linear-gradient(135deg, rgba(0, 26, 51, 0.95) 0%, rgba(0, 102, 204, 0.95) 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-top: 3rem;
+            border-radius: 15px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn-primary, .btn-secondary {
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #00ccff, #0099cc);
+            color: white;
+            box-shadow: 0 10px 25px rgba(0, 204, 255, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 204, 255, 0.4);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: white;
+            color: #0066cc;
+        }
+        
+        @media (max-width: 768px) {
+            .advisory-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .advisory-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .invitation-card {
+                padding: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Confidential Banner -->
+    <div class="confidential-banner">
+        CONFIDENTIAL
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./assets/icons/OIRA_logo_blue.png" alt="OIRA" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#challenge">Challenge</a></li>
+                <li><a href="index.html#program">Program</a></li>
+                <li><a href="index.html#impact">Impact</a></li>
+                <li><a href="index.html#contact" class="contact-link">Contact</a></li>
+            </ul>
+            <a href="https://form.typeform.com/to/XBCOoOUK" class="cta-button" target="_blank">Join Advisory Council</a>
+        </nav>
+    </header>
+
+    <!-- Advisory Header -->
+    <section class="advisory-header">
+        <div class="container">
+            <h1>OIRA Advisory Council</h1>
+            <p class="advisory-subtitle">Invitation to Join Our Strategic Advisory Board</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="invitation-card">
+                <h2>Dear Esteemed Colleague,</h2>
+                
+                <p>We are delighted to extend an exclusive invitation for you to join the <strong>Ocean Islands Regeneration Alliance (OIRA) Advisory Council</strong>. Your expertise and leadership in ocean conservation, island sustainability, and innovative environmental solutions make you an ideal candidate for this prestigious role.</p>
+
+                <h3>About OIRA</h3>
+                <p>The Ocean Islands Regeneration Alliance (OIRA) is a pioneering organization dedicated to transforming maritime mobility into a driver of ocean regeneration and community empowerment across island territories worldwide. Our mission centers on the revolutionary <strong>Blue Mobility Program</strong>, which reimagines sustainable transportation as a catalyst for marine ecosystem restoration.</p>
+
+                <h3>Advisory Council Role</h3>
+                <p>As a member of our Advisory Council, you will:</p>
+                <ul>
+                    <li>Provide strategic guidance on program development and implementation</li>
+                    <li>Contribute to policy framework development for sustainable maritime transportation</li>
+                    <li>Support the establishment of key partnerships with government agencies, NGOs, and private sector organizations</li>
+                    <li>Advise on research priorities and innovation strategies</li>
+                    <li>Help evaluate program effectiveness and impact measurement</li>
+                    <li>Contribute to global expansion and replication strategies</li>
+                </ul>
+
+                <h3>Why Your Participation Matters</h3>
+                <p>The Blue Mobility Program has the potential to impact over <strong>700 million people</strong> living on islands worldwide. Through your advisory role, you will help shape solutions that address critical challenges including:</p>
+                <ul>
+                    <li>Maritime transportation's environmental impact on marine ecosystems</li>
+                    <li>Economic sustainability for island communities</li>
+                    <li>Climate resilience and adaptation strategies</li>
+                    <li>Technology innovation for clean maritime transport</li>
+                    <li>Community empowerment and governance capacity building</li>
+                </ul>
+
+                <h3>Meeting Commitment</h3>
+                <p>Advisory Council members are expected to participate in:</p>
+                <ul>
+                    <li><strong>Quarterly virtual meetings</strong> (2 hours each)</li>
+                    <li><strong>Annual in-person strategic retreat</strong> (2 days)</li>
+                    <li><strong>Ad-hoc consultations</strong> on specific initiatives as needed</li>
+                    <li><strong>Review of key documents</strong> and strategic proposals</li>
+                </ul>
+
+                <h3>Benefits of Membership</h3>
+                <p>Your participation in the OIRA Advisory Council provides:</p>
+                <ul>
+                    <li>Opportunity to influence global ocean conservation policy</li>
+                    <li>Access to cutting-edge research and innovation in maritime sustainability</li>
+                    <li>Network with leading experts in ocean conservation and island development</li>
+                    <li>Recognition as a thought leader in sustainable blue economy development</li>
+                    <li>Direct impact on communities and ecosystems worldwide</li>
+                    <li>Professional development and speaking opportunities</li>
+                </ul>
+
+                <h3>Next Steps</h3>
+                <p>If you are interested in joining our Advisory Council, please confirm your participation by completing the application form or contacting us directly. We will schedule an introductory conversation to discuss your potential contributions and answer any questions you may have.</p>
+
+                <p>We look forward to the possibility of working together to create transformative change for ocean health and island community resilience.</p>
+
+                <p><strong>With gratitude and anticipation,</strong><br>
+                    <br>
+                <strong>Tanguy LOMBA</strong><br>
+                <strong>Founder & Director</strong><br>
+                <strong>Ocean Islands Regeneration Alliance (OIRA)</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="application-cta">
+        <div class="container">
+            <h2>Ready to Join Our Advisory Council?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95;">
+                Take the next step in shaping the future of ocean conservation and island sustainability.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="https://form.typeform.com/to/XBCOoOUK" class="btn-primary" target="_blank">
+                    Complete Application Form
+                </a>
+                <a href="index.html#contact" class="btn-secondary">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#challenge">Challenge</a>
+                <a href="index.html#program">Program</a>
+                <a href="index.html#impact">Impact</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <p><strong>Headquarters:</strong> Santa Cruz de Tenerife, Canary Islands, Spain</p>
+            <p><strong>Email:</strong> founder@oira-alliance.com</p>
+            <p style="margin-top: 2rem; opacity: 0.7;">&copy; 2024 Ocean Islands Regeneration Alliance. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
