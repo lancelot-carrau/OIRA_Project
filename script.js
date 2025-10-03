@@ -79,14 +79,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 organization: formData.get('organization') || 'Not specified',
                 interest: formData.get('interest'),
                 message: formData.get('message'),
-                to_email: 'lancelot.carrau@gmail.com'
+                to_email: 'founder@oira-alliance.com'
             };
             
             console.log('Sending email with params:', templateParams);
             
             // Check if EmailJS is available
             if (typeof emailjs === 'undefined') {
-                alert('EmailJS service is not available. Please try again later or email us directly at lancelot.carrau@gmail.com');
+                alert('EmailJS service is not available. Please try again later or email us directly at founder@oira-alliance.com');
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
                 return;
@@ -116,13 +116,13 @@ Interest: ${templateParams.interest}
 Message:
 ${templateParams.message}`;
                         
-                        const mailtoLink = `mailto:lancelot.carrau@gmail.com?subject=Contact from OIRA Website - ${templateParams.from_name}&body=${encodeURIComponent(fallbackMessage)}`;
+                        const mailtoLink = `mailto:founder@oira-alliance.com?subject=Contact from OIRA Website - ${templateParams.from_name}&body=${encodeURIComponent(fallbackMessage)}`;
                         
                         if (confirm('Email service configuration issue. Would you like to open your email client to send the message?')) {
                             window.open(mailtoLink);
                         }
                     } else {
-                        alert('Failed to send message. Error: ' + (error.text || error.message || 'Unknown error') + '. Please try again or email us directly at lancelot.carrau@gmail.com');
+                        alert('Failed to send message. Error: ' + (error.text || error.message || 'Unknown error') + '. Please try again or email us directly at founder@oira-alliance.com');
                     }
                 })
                 .finally(function() {
