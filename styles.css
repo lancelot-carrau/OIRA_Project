@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-padding-top: 100px; /* Offset for fixed navbar */
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
@@ -67,11 +72,18 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: transparent;
+    backdrop-filter: none;
     z-index: 1000;
     padding: 1rem 0;
     transition: all 0.3s ease;
+}
+
+/* Header when scrolled */
+header.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 nav {
@@ -103,6 +115,24 @@ nav {
     height: 80px;
     width: auto;
     object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+/* Logo switching logic */
+.logo-blue {
+    opacity: 0;
+}
+
+.logo-white {
+    opacity: 1;
+}
+
+header.scrolled .logo-blue {
+    opacity: 1;
+}
+
+header.scrolled .logo-white {
+    opacity: 0;
 }
 
 @keyframes gentle-wave {
@@ -118,13 +148,23 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: white;
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
 }
 
+/* Dark text when scrolled */
+header.scrolled .nav-links a {
+    color: #333;
+}
+
 .nav-links a:hover {
+    color: #00ccff;
+}
+
+/* Blue hover when scrolled */
+header.scrolled .nav-links a:hover {
     color: #0066cc;
 }
 
@@ -135,8 +175,13 @@ nav {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #0066cc, #00ccff);
+    background: linear-gradient(90deg, #00ccff, #ffffff);
     transition: width 0.3s ease;
+}
+
+/* Blue underline when scrolled */
+header.scrolled .nav-links a::before {
+    background: linear-gradient(90deg, #0066cc, #00ccff);
 }
 
 .nav-links a:hover::before {
@@ -144,23 +189,35 @@ nav {
 }
 
 .contact-link {
-    background: linear-gradient(135deg, #0066cc, #004499);
+    background: rgba(255, 255, 255, 0.2);
     color: white !important;
     padding: 0.5rem 1rem;
     border-radius: 25px;
     transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Blue contact button when scrolled */
+header.scrolled .contact-link {
+    background: linear-gradient(135deg, #0066cc, #004499);
+    border: none;
 }
 
 .contact-link:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Blue contact button hover when scrolled */
+header.scrolled .contact-link:hover {
+    background: linear-gradient(135deg, #0080ff, #0066cc);
 }
 
 .cta-button {
-    background: linear-gradient(135deg, #0066cc, #004499);
+    background: rgba(255, 255, 255, 0.2);
     color: white;
     padding: 0.75rem 1.5rem;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 50px;
     text-decoration: none;
     font-weight: 600;
@@ -169,8 +226,20 @@ nav {
     overflow: hidden;
 }
 
+/* Blue CTA button when scrolled */
+header.scrolled .cta-button {
+    background: linear-gradient(135deg, #0066cc, #004499);
+    border: none;
+}
+
 .cta-button:hover {
     transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Blue CTA button hover when scrolled */
+header.scrolled .cta-button:hover {
+    background: linear-gradient(135deg, #0080ff, #0066cc);
     box-shadow: 0 10px 25px rgba(0, 102, 204, 0.3);
 }
 
@@ -661,6 +730,16 @@ section {
     margin-top: auto;
     display: inline-block;
     align-self: center;
+    background: linear-gradient(135deg, #0066cc, #004499) !important;
+    color: white !important;
+    border: none !important;
+}
+
+.action-card .cta-button:hover {
+    background: linear-gradient(135deg, #0080ff, #0066cc) !important;
+    color: white !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 102, 204, 0.3);
 }
 
 /* Main Form CTA */
@@ -957,9 +1036,31 @@ footer {
 }
 
 /* Responsive Design */
+
+/* Tablet responsive adjustments */
+@media (max-width: 992px) {
+    html {
+        scroll-padding-top: 90px;
+    }
+    
+    .hero {
+        padding-top: 90px;
+        height: calc(100vh - 90px);
+    }
+}
+
 @media (max-width: 768px) {
+    html {
+        scroll-padding-top: 100px;
+    }
+    
     .nav-links {
         display: none;
+    }
+
+    .hero {
+        padding-top: 100px; /* Account for fixed navbar height in mobile */
+        height: calc(100vh - 100px); /* Reduce height to accommodate padding */
     }
 
     .hero h1 {
